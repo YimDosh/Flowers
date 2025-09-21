@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Te amo 🌻</title>
+  <title>Ramo de Flores Amarillas 🌻</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -19,10 +20,12 @@
       position: absolute;
       top: 8%;
       color: yellow;
-      font-size: 2.8em;
+      font-size: 6vw; /* escala con el ancho de pantalla */
       text-shadow: 0 0 10px yellow, 0 0 20px orange;
       z-index: 10;
       animation: glow 2s ease-in-out infinite alternate;
+      text-align: center;
+      padding: 0 10px;
     }
 
     @keyframes glow {
@@ -31,14 +34,15 @@
     }
 
     .bouquet {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;   /* antes 300px */
-  height: auto;
-  z-index: 5;
-}
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50vw; /* ocupa la mitad de la pantalla */
+      max-width: 400px; /* límite en PC */
+      height: auto;
+      z-index: 5;
+    }
 
     .bouquet img {
       width: 100%;
@@ -63,10 +67,20 @@
         opacity: 0.7;
       }
     }
+
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 8vw; /* más grande en móvil */
+      }
+      .bouquet {
+        width: 70vw; /* que ocupe más espacio en móvil */
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>💛 Para mi florecita, te quiero 💛</h1>
+  <h1>💛 Para Ti, Te Amo 💛</h1>
 
   <!-- Ramo como imagen sin fondo -->
   <div class="bouquet">
