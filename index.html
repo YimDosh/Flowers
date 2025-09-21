@@ -23,9 +23,9 @@
       position: absolute;
       top: 8%;
       color: yellow;
-      font-size: 5vw; /* se adapta al ancho */
+      font-size: 5vw;
       text-align: center;
-      white-space: nowrap; /* evita saltos de línea */
+      white-space: nowrap;
       text-shadow:
         0 0 5px yellow,
         0 0 10px orange,
@@ -45,7 +45,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 40vw; /* tamaño relativo */
+      width: 40vw;
       max-width: 400px;
       min-width: 220px;
       z-index: 5;
@@ -78,10 +78,13 @@
     /* Ajuste extra en pantallas pequeñas */
     @media (max-width: 600px) {
       h1 {
-        font-size: 6vw; /* un poco más chico en móvil */
+        font-size: 6vw;
       }
+
       .bouquet {
-        width: 70vw;
+        width: 90vw;       /* Ahora ocupa el 90% del ancho */
+        max-width: none;   /* Elimina límite máximo */
+        min-width: 0;      /* Elimina mínimo para escalar libre */
       }
     }
   </style>
