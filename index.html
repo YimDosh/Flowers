@@ -2,14 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Para tí</title>
+  <title>Para ti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fuente Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -23,7 +28,8 @@
       position: absolute;
       top: 8%;
       color: yellow;
-      font-size: 5vw;
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      line-height: 1.2;
       text-align: center;
       white-space: nowrap;
       text-shadow:
@@ -31,10 +37,9 @@
         0 0 10px orange,
         0 0 20px orange,
         0 0 40px yellow;
-      z-index: 10;
       animation: glow 2s ease-in-out infinite alternate;
+      z-index: 10;
     }
-
     @keyframes glow {
       from { text-shadow: 0 0 5px yellow, 0 0 10px orange; }
       to   { text-shadow: 0 0 20px yellow, 0 0 40px orange; }
@@ -45,25 +50,21 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 40vw;
-      max-width: 400px;
-      min-width: 220px;
+      width: clamp(300px, 90vw, 600px);
       z-index: 5;
     }
-
     .bouquet img {
+      display: block;
       width: 100%;
       height: auto;
     }
 
-    /* Flores cayendo */
     .falling-flower {
       position: absolute;
       top: -50px;
       font-size: 2em;
       animation: fall linear forwards;
     }
-
     @keyframes fall {
       0% {
         transform: translateY(-50px) rotate(0deg);
@@ -75,42 +76,43 @@
       }
     }
 
-    /* Ajuste extra en pantallas pequeñas */
     @media (max-width: 600px) {
       h1 {
-        font-size: 6vw;
+        top: 12%;
       }
-
+      .falling-flower {
+        font-size: 2.5em;
+      }
       .bouquet {
-        width: 90vw;       /* Ahora ocupa el 90% del ancho */
-        max-width: none;   /* Elimina límite máximo */
-        min-width: 0;      /* Elimina mínimo para escalar libre */
+        width: 100vw;
+        padding: 0 2vw;
       }
     }
   </style>
 </head>
+
 <body>
   <h1>💛 Para mi florecita, te quiero 💛</h1>
 
-  <!-- Ramo como imagen -->
   <div class="bouquet">
-    <img src="flower.png" alt="Ramo de Flores Amarillas">
+    <img
+      src="flower.png"
+      srcset="flower-small.png 600w, flower.png 1200w"
+      sizes="(max-width: 600px) 90vw, 400px"
+      alt="Ramo de Flores Amarillas"
+    >
   </div>
 
   <script>
     function createFallingFlower() {
-      const flower = document.createElement("div");
-      flower.classList.add("falling-flower");
-      flower.textContent = "🌻";
-      flower.style.left = Math.random() * window.innerWidth + "px";
-      flower.style.animationDuration = (3 + Math.random() * 5) + "s"; 
+      const flower = document.createElement('div');
+      flower.className = 'falling-flower';
+      flower.textContent = '🌻';
+      flower.style.left = Math.random() * window.innerWidth + 'px';
+      flower.style.animationDuration = (3 + Math.random() * 5) + 's';
       document.body.appendChild(flower);
-
-      setTimeout(() => {
-        flower.remove();
-      }, 8000);
+      setTimeout(() => flower.remove(), 8000);
     }
-
     setInterval(createFallingFlower, 500);
   </script>
 </body>
