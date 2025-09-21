@@ -5,8 +5,7 @@
   <title>Para ti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link
+    <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
     rel="stylesheet"
   >
@@ -24,68 +23,66 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    /* Título Glow */
-    h1 {
-      position: absolute;
-      top: 8%;
-      color: yellow;
-      font-size: clamp(1.5rem, 5vw, 3rem);
-      line-height: 1.2;
-      text-align: center;
-      white-space: nowrap;
-      text-shadow:
-        0 0 5px yellow,
-        0 0 10px orange,
-        0 0 20px orange,
-        0 0 40px yellow;
-      animation: glow 2s ease-in-out infinite alternate;
-      z-index: 10;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 5px yellow, 0 0 10px orange; }
-      to   { text-shadow: 0 0 20px yellow, 0 0 40px orange; }
-    }
+ /* Título Glow */
+ h1 {
+ position: absolute;
+ top: 8%;
+ color: yellow;
+ font-size: clamp(1.5rem, 5vw, 3rem);
+ line-height: 1.2;
+ text-align: center;
+ white-space: nowrap;
+ text-shadow:
+ 0 0 5px yellow,
+ 0 0 10px orange,
+ 0 0 20px orange,
+ 0 0 40px yellow;
+ animation: glow 2s ease-in-out infinite alternate;
+ z-index: 10;
+ }
+ @keyframes glow {
+ from { text-shadow: 0 0 5px yellow, 0 0 10px orange; }
+ to  { text-shadow: 0 0 20px yellow, 0 0 40px orange; }
+ }
 
-    /* Imagen responsive */
-    .bouquet {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: clamp(300px, 90vw, 600px);
-      z-index: 5;
-    }
-    .bouquet img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+ /* Imagen responsive */
+  .bouquet {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: clamp(300px, 90vw, 600px);
+ z-index: 5;
+ }
+ .bouquet img {
+ display: block;
+ width: 100%;
+ height: auto;
+ }
 
-    /* Flores cayendo */
-    .falling-flower {
-      position: absolute;
-      top: -50px;
-      font-size: 2em;
-      animation: fall linear forwards;
-    }
-    @keyframes fall {
-      0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0.7;
-      }
-    }
+ /* Flores cayendo */
+  .falling-flower {
+ position: absolute;
+ top: -50px;
+ font-size: 2em;
+ animation: fall linear forwards; }
+ @keyframes fall {
+ 0% {
+ transform: translateY(-50px) rotate(0deg);
+ opacity: 1;
+ } 100% {
+ transform: translateY(110vh) rotate(360deg);
+ opacity: 0.7;
+ }
+ }
 
-    /* Móviles muy estrechos */
-    @media (max-width: 600px) {
-      h1 { top: 12%; }
-      .falling-flower { font-size: 2.5em; }
-      .bouquet { width: 100vw; padding: 0 2vw; }
-    }
-  </style>
+ /* Móviles muy estrechos */
+ @media (max-width: 600px) {
+ h1 { top: 12%; }
+ .falling-flower { font-size: 2.5em; }
+ .bouquet { width: 100vw; padding: 0 2vw; }
+ }
+ </style>
 </head>
 
 <body>
