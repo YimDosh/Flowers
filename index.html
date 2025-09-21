@@ -5,10 +5,14 @@
   <title>Para ti</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fuente Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+    /* Reset y cuerpo */
     * {
       margin: 0;
       padding: 0;
@@ -24,6 +28,7 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    /* Título responsive */
     h1 {
       position: absolute;
       top: 8%;
@@ -45,6 +50,7 @@
       to   { text-shadow: 0 0 20px yellow, 0 0 40px orange; }
     }
 
+    /* Contenedor responsive del ramo */
     .bouquet {
       position: absolute;
       top: 50%;
@@ -59,6 +65,7 @@
       height: auto;
     }
 
+    /* Animación de girasoles cayendo */
     .falling-flower {
       position: absolute;
       top: -50px;
@@ -76,13 +83,10 @@
       }
     }
 
+    /* Ajustes extra en móviles */
     @media (max-width: 600px) {
-      h1 {
-        top: 12%;
-      }
-      .falling-flower {
-        font-size: 2.5em;
-      }
+      h1 { top: 12%; }
+      .falling-flower { font-size: 2.5em; }
       .bouquet {
         width: 100vw;
         padding: 0 2vw;
@@ -95,12 +99,23 @@
   <h1>💛 Para mi florecita, te quiero 💛</h1>
 
   <div class="bouquet">
-    <img
-      src="flower.png"
-      srcset="flower-small.png 600w, flower.png 1200w"
-      sizes="(max-width: 600px) 90vw, 400px"
-      alt="Ramo de Flores Amarillas"
-    >
+    <picture>
+      <!-- Versión para móvil (≤600px) -->
+      <source
+        media="(max-width: 600px)"
+        srcset="flower-small.png"
+      >
+      <!-- Versión para escritorio (>600px) -->
+      <source
+        media="(min-width: 601px)"
+        srcset="flower.png"
+      >
+      <!-- Fallback -->
+      <img
+        src="flower.png"
+        alt="Ramo de Flores Amarillas"
+      >
+    </picture>
   </div>
 
   <script>
