@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Para tí</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fuente Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
@@ -13,24 +16,28 @@
       align-items: center;
       background: #0f0f1f;
       overflow: hidden;
-      font-family: 'Comic Sans MS', cursive;
+      font-family: 'Poppins', sans-serif;
     }
 
     h1 {
       position: absolute;
       top: 8%;
       color: yellow;
-      font-size: 6vw; /* escala con el ancho de pantalla */
-      text-shadow: 0 0 10px yellow, 0 0 20px orange;
+      font-size: 5vw; /* se adapta al ancho */
+      text-align: center;
+      white-space: nowrap; /* evita saltos de línea */
+      text-shadow:
+        0 0 5px yellow,
+        0 0 10px orange,
+        0 0 20px orange,
+        0 0 40px yellow;
       z-index: 10;
       animation: glow 2s ease-in-out infinite alternate;
-      text-align: center;
-      padding: 0 10px;
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 10px yellow, 0 0 20px orange; }
-      to { text-shadow: 0 0 20px yellow, 0 0 40px orange; }
+      from { text-shadow: 0 0 5px yellow, 0 0 10px orange; }
+      to   { text-shadow: 0 0 20px yellow, 0 0 40px orange; }
     }
 
     .bouquet {
@@ -38,9 +45,9 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 50vw; /* ocupa la mitad de la pantalla */
-      max-width: 400px; /* límite en PC */
-      height: auto;
+      width: 40vw; /* tamaño relativo */
+      max-width: 400px;
+      min-width: 220px;
       z-index: 5;
     }
 
@@ -68,13 +75,13 @@
       }
     }
 
-    /* Ajustes para pantallas pequeñas */
+    /* Ajuste extra en pantallas pequeñas */
     @media (max-width: 600px) {
       h1 {
-        font-size: 8vw; /* más grande en móvil */
+        font-size: 6vw; /* un poco más chico en móvil */
       }
       .bouquet {
-        width: 70vw; /* que ocupe más espacio en móvil */
+        width: 70vw;
       }
     }
   </style>
@@ -82,7 +89,7 @@
 <body>
   <h1>💛 Para mi florecita, te quiero 💛</h1>
 
-  <!-- Ramo como imagen sin fondo -->
+  <!-- Ramo como imagen -->
   <div class="bouquet">
     <img src="ChatGPT Image 20 sept 2025, 06_27_54 p.m..png" alt="Ramo de Flores Amarillas">
   </div>
