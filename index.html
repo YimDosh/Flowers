@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te amo 🌻</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0f0f1f;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    h1 {
+      position: absolute;
+      top: 8%;
+      color: yellow;
+      font-size: 2.8em;
+      text-shadow: 0 0 10px yellow, 0 0 20px orange;
+      z-index: 10;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px yellow, 0 0 20px orange; }
+      to { text-shadow: 0 0 20px yellow, 0 0 40px orange; }
+    }
+
+    .bouquet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;   /* antes 300px */
+  height: auto;
+  z-index: 5;
+}
+
+    .bouquet img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Flores cayendo */
+    .falling-flower {
+      position: absolute;
+      top: -50px;
+      font-size: 2em;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.7;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>💛 Para mi florecita, te quiero 💛</h1>
+
+  <!-- Ramo como imagen sin fondo -->
+  <div class="bouquet">
+    <img src="ChatGPT Image 20 sept 2025, 06_27_54 p.m..png" alt="Ramo de Flores Amarillas">
+  </div>
+
+  <script>
+    function createFallingFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("falling-flower");
+      flower.textContent = "🌻";
+      flower.style.left = Math.random() * window.innerWidth + "px";
+      flower.style.animationDuration = (3 + Math.random() * 5) + "s"; 
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 8000);
+    }
+
+    setInterval(createFallingFlower, 500);
+  </script>
+</body>
+</html>
